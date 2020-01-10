@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  database:
+    image: mongo
+
+  app:
+    build: .
+    ports:
+      - "3333:3333"
+    environment:
+      - DB_URL=database
+    command: yarn dev
+    depends_on:
+      - database
+    volumes:
+      - ".:/usr/app"
