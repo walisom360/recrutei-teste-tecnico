@@ -69,7 +69,7 @@ criei uma rota que envia esses dados atualizados ,então sempre
 que mudava o estado solicitava essa informação da minha api
 
 ```
- takeLatest("GET_ATUALIZED_POSTS_REQUEST", getPostsAtualized),
+  takeLatest("GET_ATUALIZED_POSTS_REQUEST", getPostsAtualized),
   takeLatest("CREATE_POST_SUCCESS", getPostsAtualized),
   takeLatest("UPDATE_POST_SUCCESS", getPostsAtualized),
   takeLatest("UPDATE_POST_SUCCESS", getPosts),
