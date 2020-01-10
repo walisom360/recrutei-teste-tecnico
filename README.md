@@ -19,4 +19,4 @@
 
 ![Captura de tela de 2020-01-10 13-44-27](https://user-images.githubusercontent.com/45033721/72171074-e3f58300-33b0-11ea-9282-ff47864b1daa.png)
 
-![Captura de tela de 2020-01-10 13-41-04](https://user-images.githubusercontent.com/45033721/72171104-fa034380-33b0-11ea-873a-0e40cf6e77ac.png)
+![Captura de tela de 2020-01-10 13-59-26](https://user-images.githubusercontent.com/45033721/72171420-b4934600-33b1-11ea-8d3f-ed71e1bd457d.png)

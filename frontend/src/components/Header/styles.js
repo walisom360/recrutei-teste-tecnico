@@ -17,7 +17,7 @@ export const Container = styled.div`
 `;
 
 export const Logo = styled.h2`
-  margin: 0 0 20px 20px;
+  margin: 20px 0 20px 20px;
   font-size: 45px;
   color: #fff;
   border: 1px solid #fff;
