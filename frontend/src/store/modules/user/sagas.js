@@ -3,7 +3,11 @@ import { push } from "connected-react-router";
 import { actions as toastrActions } from "react-redux-toastr";
 import api from "../../../services/api";
 
-import { getUserSuccess, signUpUserSuccess } from "../user/actions";
+import {
+  getUserSuccess,
+  signUpUserSuccess,
+  signUpUserFailure
+} from "../user/actions";
 
 function* getUser() {
   const { data } = yield call(api.get, "users");
@@ -28,6 +32,7 @@ function* signUpUser({ payload }) {
     yield put(signUpUserSuccess());
     yield put(push("/signin"));
   } catch (err) {
+    yield put(signUpUserFailure());
     yield put(
       toastrActions.add({
         type: "error",

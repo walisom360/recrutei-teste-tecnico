@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import { Container, Logo, Statistics, Field, DivUser, Button } from "./styles";
+import { Container, Logo, Statistics, Field, DivUser } from "./styles";
 
 import { signOut } from "../../store/modules/auth/actions";
 

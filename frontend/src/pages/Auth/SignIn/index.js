@@ -9,7 +9,7 @@ import { signInRequest } from "../../../store/modules/auth/actions";
 
 import { Form, Input } from "@rocketseat/unform";
 
-import { Ring } from "react-awesome-spinners";
+//import { Ring } from "react-awesome-spinners";
 
 import * as Yup from "yup";
 

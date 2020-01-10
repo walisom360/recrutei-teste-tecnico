@@ -15,3 +15,7 @@ export const signUpUserRequest = (name, email, password) => ({
 export const signUpUserSuccess = () => ({
   type: "SIGN_UP_USER_SUCCESS"
 });
+
+export const signUpUserFailure = () => ({
+  type: "SIGN_UP_USER_FAILURE"
+});

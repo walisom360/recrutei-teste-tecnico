@@ -21,14 +21,7 @@ import {
   ButtonNext,
   DivModalView,
   ButtonExit,
-  ButtonCancel
-} from "./styles";
-
-import Modal from "../../components/Modal";
-
-import ModalRemove from "../../components/ModalRemove";
-
-import {
+  ButtonCancel,
   FormContainer,
   PostTitleForm,
   TypePost,
@@ -36,7 +29,11 @@ import {
   ColumnInput,
   DivButton,
   Button
-} from "../PostForm/styles";
+} from "./styles";
+
+import Modal from "../../components/Modal";
+
+import ModalRemove from "../../components/ModalRemove";
 
 import { useDispatch, useSelector } from "react-redux";
 
@@ -78,15 +75,11 @@ export default function Panel() {
     { id: "rn", title: "React Native" }
   ];
 
-  //const [edit, setEdit] = false;
-
   const [id, setIdRemove] = useState(null);
 
   const dispatch = useDispatch();
 
   const posts = useSelector(state => state.posts.docs);
-
-  //const atualized = useSelector(state => state.posts.docs);
 
   const page = useSelector(state => state.posts.page);
   const pages = useSelector(state => state.posts.postInformations.pages);
@@ -101,11 +94,11 @@ export default function Panel() {
 
   useEffect(() => {
     dispatch(getPostsRequest());
-  }, []);
+  }, [dispatch]);
 
   function closeModalUpdate() {
     dispatch(postsModalUpdateClose());
-    // setEdited(false);
+
     setPostVisualizate({});
   }
 
@@ -121,7 +114,7 @@ export default function Panel() {
 
   async function getPostIdAndUpdate(id) {
     const { data } = await api.get(`/posts/${id}`);
-    console.log(data);
+
     setPostVisualizate(data);
     dispatch(postsModalUpdateOpen());
   }
@@ -214,12 +207,13 @@ export default function Panel() {
       {modalViewOpen && (
         <Modal size="big">
           <DivModalView>
-            <h2>{postVisualizate.title}</h2>
+            <div>
+              <h2>{postVisualizate.title}</h2>
 
-            <h4>{postVisualizate.type.title}</h4>
+              <h4>{postVisualizate.type.title}</h4>
 
-            <p>{postVisualizate.content}</p>
-
+              <p>{postVisualizate.content}</p>
+            </div>
             <button onClick={closeModalView}>Fechar</button>
           </DivModalView>
         </Modal>
@@ -250,15 +244,6 @@ export default function Panel() {
               <Textarea name="content" placeholder="Digite o conteúdo aqui" />
 
               <DivButton>
-                <Button onClick={() => {}}>
-                  {false ? (
-                    <div style={{ marginLeft: 23 }}>
-                      <Ring size={30} color="#00bfff" />
-                    </div>
-                  ) : (
-                    "Editar Post"
-                  )}
-                </Button>
                 <Button type="submit">
                   {loadingUpdate ? (
                     <div style={{ marginLeft: 23 }}>

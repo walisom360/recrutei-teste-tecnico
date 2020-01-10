@@ -9,7 +9,8 @@ import {
   postsModalUpdateClose,
   postsModalRemoveClose,
   nextPageSuccess,
-  prevPageSuccess
+  prevPageSuccess,
+  prevPageRequest
 } from "./actions";
 
 import api from "../../../services/api";
@@ -20,12 +21,17 @@ function* getPostsAtualized() {
   yield put(getAtualizedPostsSuccess(data));
 }
 
-function* getPosts({ type }) {
+function* getPosts() {
   const page = yield select(state => state.posts.page);
 
   const resp = yield call(api.get, `posts?page=${page}`);
 
   const { docs, ...postInformations } = resp.data;
+
+  if (docs.length === 0) {
+    yield put(prevPageRequest());
+    return;
+  }
 
   yield put(getPostsSuccess(docs, postInformations));
 }
@@ -151,6 +157,7 @@ export default all([
   takeLatest("UPDATE_POST_REQUEST", updatePost),
   takeLatest("REMOVE_POST_REQUEST", removePost),
   takeLatest("REMOVE_POST_SUCCESS", getPostsAtualized),
+  takeLatest("REMOVE_POST_SUCCESS", getPosts),
   takeLatest("NEXT_PAGE_REQUEST", nextPage),
   takeLatest("PREV_PAGE_REQUEST", prevPage),
   takeLatest("NEXT_PAGE_SUCCESS", getPosts),

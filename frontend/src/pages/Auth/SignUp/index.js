@@ -33,10 +33,11 @@ function SignUp() {
   const dispatch = useDispatch();
   const loading = useSelector(state => state.user.loading);
 
-  function handleSubmit(data) {
+  function handleSubmit(data, { resetForm }) {
     const { name, email, password } = data;
 
     dispatch(signUpUserRequest(name, email, password));
+    resetForm();
   }
 
   return (

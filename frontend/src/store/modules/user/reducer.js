@@ -13,7 +13,8 @@ export default function user(state = INITIAL_STATE, action) {
 
     case "SIGN_UP_USER_SUCCESS":
       return { ...state, loading: false };
-
+    case "SIGN_UP_USER_FAILURE":
+      return { ...state, loading: false };
     default:
       return state;
   }

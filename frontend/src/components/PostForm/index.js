@@ -49,8 +49,6 @@ export default function PostForm() {
         title: option.title
       }));
 
-      console.log(options);
-
       setOptions(options);
     }
 
@@ -58,11 +56,10 @@ export default function PostForm() {
   }, []);
 
   function handleSubmit(data, { resetForm }) {
-    console.log(data);
     const { title, tech: type, content } = data;
 
     const post = { title, type, content };
-    console.log(post);
+
     dispatch(createPostRequest(post));
 
     resetForm();
