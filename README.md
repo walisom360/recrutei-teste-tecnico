@@ -22,3 +22,5 @@
 ![Captura de tela de 2020-01-10 13-59-26](https://user-images.githubusercontent.com/45033721/72171420-b4934600-33b1-11ea-8d3f-ed71e1bd457d.png)
 
 ![Captura de tela de 2020-01-10 14-14-02](https://user-images.githubusercontent.com/45033721/72172332-a9411a00-33b3-11ea-915a-62adacb1282f.png)
+
+![Captura de tela de 2020-01-10 14-17-54](https://user-images.githubusercontent.com/45033721/72172544-31bfba80-33b4-11ea-9c8c-421ce2242820.png)
