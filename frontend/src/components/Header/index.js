@@ -10,6 +10,8 @@ import { getAtualizedPostsRequest } from "../../store/modules/posts/actions";
 
 import { useDispatch, useSelector } from "react-redux";
 
+import { IoIosLogOut } from "react-icons/io";
+
 export default function Header() {
   const dispatch = useDispatch();
 
@@ -51,7 +53,21 @@ export default function Header() {
       </Statistics>
       <DivUser>
         <span>{name}</span>
-        <Button onClick={exit}>Sair</Button>
+        <button
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: 4,
+            marginRight: 10,
+            border: "1px solid #fff",
+            color: "#fff",
+            background: "#353940"
+          }}
+          onClick={exit}
+        >
+          logout <IoIosLogOut color="#fff" size={20} />
+        </button>
       </DivUser>
     </Container>
   );

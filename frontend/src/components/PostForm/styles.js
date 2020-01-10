@@ -43,7 +43,7 @@ export const FormContainer = styled.div`
 `;
 
 export const PostTitle = styled.h2`
-  color: purple;
+  color: black;
 `;
 
 export const PostTitleForm = styled.h2`

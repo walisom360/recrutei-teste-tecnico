@@ -62,7 +62,7 @@ function* createPost({ payload }) {
     yield call(api.post, "posts", { title, content, type });
 
     yield put(createPostSuccess());
-    // yield put(projectModalClose());
+
     yield put(
       toastrActions.add({
         type: "success",

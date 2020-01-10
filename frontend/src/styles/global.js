@@ -3,7 +3,9 @@ import { createGlobalStyle } from "styled-components";
 import "react-redux-toastr/lib/css/react-redux-toastr.min.css";
 
 export default createGlobalStyle`
-   @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+    @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
+font-family: "Raleway", sans-serif;
   
   *{
       padding:0;
@@ -15,7 +17,7 @@ export default createGlobalStyle`
    body{
       background:#fff;
       color:#FFF; 
-      font-family:'Source Sans Pro' , sans-serif;
+      font-family: "Raleway", sans-serif;
       text-rendering:optimizeLegibility !important;
       -webkit-font-smoothing:antialiased !important;
    }

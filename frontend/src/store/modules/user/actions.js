@@ -7,14 +7,11 @@ export const getUserSuccess = data => ({
   payload: { data }
 });
 
-//CRIAR USUARIO
 export const signUpUserRequest = (name, email, password) => ({
   type: "SIGN_UP_USER_REQUEST",
   payload: { name, email, password }
 });
 
-//apenas para o loading do botão de criação
-//verdinho que criou
 export const signUpUserSuccess = () => ({
   type: "SIGN_UP_USER_SUCCESS"
 });

@@ -18,7 +18,10 @@ import {
   ButtonRemove,
   ContainerButtons,
   ButtonPrevious,
-  ButtonNext
+  ButtonNext,
+  DivModalView,
+  ButtonExit,
+  ButtonCancel
 } from "./styles";
 
 import Modal from "../../components/Modal";
@@ -100,13 +103,6 @@ export default function Panel() {
     dispatch(getPostsRequest());
   }, []);
 
-  async function getPostsPaginate(page = 1) {
-    const { data, ...postInfo } = await api.get(`/posts?page=${page}`);
-
-    // setPosts(data);
-    //setPostsInfo(postInfo);
-  }
-
   function closeModalUpdate() {
     dispatch(postsModalUpdateClose());
     // setEdited(false);
@@ -124,10 +120,6 @@ export default function Panel() {
   }
 
   async function getPostIdAndUpdate(id) {
-    //dispatch abrindo modal de posts
-
-    //função dentro do modal
-
     const { data } = await api.get(`/posts/${id}`);
     console.log(data);
     setPostVisualizate(data);
@@ -140,8 +132,6 @@ export default function Panel() {
     const { title, content } = data;
 
     dispatch(updatePostRequest(id, title, content));
-
-    //setPostVisualizate({});
   }
 
   async function getPostById(id) {
@@ -223,13 +213,15 @@ export default function Panel() {
       </ContainerButtons>
       {modalViewOpen && (
         <Modal size="big">
-          <h2>{postVisualizate.title}</h2>
+          <DivModalView>
+            <h2>{postVisualizate.title}</h2>
 
-          <h4>{postVisualizate.type.title}</h4>
+            <h4>{postVisualizate.type.title}</h4>
 
-          <p>{postVisualizate.content}</p>
+            <p>{postVisualizate.content}</p>
 
-          <button onClick={closeModalView}>Fechar</button>
+            <button onClick={closeModalView}>Fechar</button>
+          </DivModalView>
         </Modal>
       )}
 
@@ -277,17 +269,27 @@ export default function Panel() {
                   )}
                 </Button>
               </DivButton>
-              <Button onClick={closeModalUpdate}>cancelar</Button>
+              <ButtonExit onClick={closeModalUpdate}>fechar</ButtonExit>
             </Form>
           </FormContainer>
         </Modal>
       )}
       {modalRemoveOpen && (
         <ModalRemove size="big">
-          <h3 style={{ color: "black" }}>Deseja Realmente excluir esse Post</h3>
-          <div style={{ display: "flex", flexDirection: "row" }}>
-            <button onClick={deletePost}>excluir</button>
-            <button onClick={closeRemove}>cancelar</button>
+          <h3 style={{ color: "black", textAlign: "center" }}>
+            Excluir o Post
+          </h3>
+          <div
+            style={{
+              marginTop: 25,
+              padding: 20,
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between"
+            }}
+          >
+            <ButtonCancel onClick={closeRemove}>cancelar</ButtonCancel>
+            <ButtonExit onClick={deletePost}>excluir</ButtonExit>
           </div>
         </ModalRemove>
       )}

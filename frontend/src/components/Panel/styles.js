@@ -6,7 +6,7 @@ export const Container = styled.div`
   margin: 0px 120px 140px 140px;
 
   h2 {
-    color: purple;
+    color: black;
     margin-bottom: 12px;
   }
 
@@ -56,6 +56,7 @@ export const DivActions = styled.div`
 export const PanelContainer = styled.div`
   box-shadow: 0 8px 8px -8px black;
   height: 200px;
+  margin-top: 10px;
 `;
 
 export const PanelTable = styled.div`
@@ -71,12 +72,20 @@ export const Id = styled.div`
   align-items: flex-start;
   width: 20%;
   font-size: 12px;
+
+  strong {
+    color: #a9a9a9;
+  }
 `;
 
 export const Type = styled.div`
   display: flex;
   align-items: flex-start;
   width: 20%;
+
+  strong {
+    color: #72159c;
+  }
 `;
 
 export const Title = styled.div`
@@ -124,7 +133,7 @@ export const ButtonPrevious = styled.button`
   border-radius: 10px;
   cursor: pointer;
   color: white;
-  background: #0b75c2;
+  background: #755684;
 
   width: 120px;
   font-size: 15px;
@@ -133,7 +142,7 @@ export const ButtonPrevious = styled.button`
   margin-left: 10px;
   margin-right: 6px;
   &:hover {
-    background: #2993e0;
+    background: #72159c;
   }
 `;
 
@@ -157,7 +166,7 @@ export const ButtonNext = styled.button`
   border-radius: 10px;
   cursor: pointer;
   color: white;
-  background: #0b75c2;
+  background: #755684;
 
   width: 120px;
   font-size: 15px;
@@ -166,7 +175,7 @@ export const ButtonNext = styled.button`
   margin-left: 10px;
   margin-right: 6px;
   &:hover {
-    background: #2993e0;
+    background: #72159c;
 
     &:disabled {
       opacity: 0.5;
@@ -256,5 +265,81 @@ export const ButtonRemove = styled.button`
     color: white;
     background: red;
     border: none;
+  }
+`;
+
+export const DivModalView = styled.div`
+  width: 100%;
+  p {
+    margin-top: 20px;
+  }
+
+  button {
+    border: none;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    background: #f55b5b;
+    margin-top: 150px;
+    margin-left: 650px;
+
+    margin-right: 12px;
+    width: 80px;
+    font-size: 12px;
+    font-weight: bold;
+    outline: none;
+
+    &:hover {
+      background: #ff0000;
+    }
+  }
+`;
+
+export const ButtonExit = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  height: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+
+  background: #f55b5b;
+  margin-top: 10px;
+
+  width: 80px;
+  font-size: 16px;
+  font-weight: bold;
+  outline: none;
+
+  &:hover {
+    background: #ff0000;
+  }
+`;
+
+export const ButtonCancel = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  height: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  margin-top: 10px;
+
+  width: 80px;
+  font-size: 16px;
+  font-weight: bold;
+  outline: none;
+
+  background: #b9bbbe;
+  color: #666;
+  &:hover {
+    background: #999;
   }
 `;

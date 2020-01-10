@@ -1,30 +1,27 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
+  font-family: "Raleway", sans-serif;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 8px 8px -8px black;
   width: 100%;
-  height: 105px;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(105, 100, 178, 1) 0%,
-    rgba(179, 176, 214, 1) 0%,
-    rgba(180, 177, 214, 1) 0%,
-    rgba(169, 166, 209, 1) 0%,
-    rgba(151, 147, 200, 1) 1%,
-    rgba(110, 102, 207, 1) 100%,
-    rgba(229, 228, 238, 1) 100%,
-    rgba(20, 13, 134, 1) 100%
-  );
+
+  background: #353940;
+
+  flex-wrap: wrap;
 `;
 
-export const Logo = styled.h1`
+export const Logo = styled.h2`
   margin: 0 0 20px 20px;
+  font-size: 45px;
   color: #fff;
+  border: 1px solid #fff;
+  padding: 8px;
 `;
 
 export const Statistics = styled.div`
@@ -42,7 +39,14 @@ export const Field = styled.div`
 
   h2 {
     font-weight: bold;
-    color: violet;
+    color: white;
+  }
+
+  strong {
+    color: #72159c;
+    font-weight: bold;
+    font-size: 22px;
+    border-color: 1px solid #fff;
   }
 `;
 
@@ -63,7 +67,7 @@ export const Button = styled.button`
   border-radius: 10px;
   cursor: pointer;
   color: white;
-  background: #0b75c2;
+  background: #755684;
 
   width: 120px;
   font-size: 15px;
@@ -72,6 +76,6 @@ export const Button = styled.button`
   margin-left: 10px;
   margin-right: 6px;
   &:hover {
-    background: #2993e0;
+    background: #72159c;
   }
 `;
