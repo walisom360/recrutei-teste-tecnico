@@ -1,6 +1,6 @@
 # Teste Técnico - React Pleno
 
-** Olá! Obrigado pelo seu tempo e disponibilidade **
+**Olá! Obrigado pelo seu tempo e disponibilidade**
 
 ### O que iremos avaliar ?
 
